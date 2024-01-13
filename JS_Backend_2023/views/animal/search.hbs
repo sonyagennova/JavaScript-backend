@@ -1,0 +1,57 @@
+{{!-- <main>
+    <section class="animal-search">
+        <h1>Search</h1>
+
+        <form class="search-form" method="GET">
+            <input type="text" class="search-coin" name="name" value="{{name}}" placeholder="Search here...">
+            {{>paymentMethod}}
+            <button type="submit" class="btn-search">Search</button>
+        </form>
+
+        {{#if animal}}
+        <div class="search-result">
+            <div class="search-list">
+                {{#each animal}}
+                {{>animal}}
+                {{/each}}
+            </div>
+        </div>
+        {{else}}
+        <div class="no-match">
+            <p>No match was found!</p>
+        </div>
+        {{/if}}
+    </section>
+</main> --}}
+
+
+<main class="search">
+    <!-- Search Page (Only for logged-in users) -->
+    <section id="search">
+        <h2>Search by Location</h2>
+
+        <form class="search-wrapper cf" method="" action="#">
+            <input id="#search-input" type="text" name="location" value="{{location}}" placeholder="Search here..."
+                required />
+            <button type="submit">Search</button>
+        </form>
+
+        <div id="search-container">
+            <ul class="card-wrapper">
+                {{#if animal}}
+
+                <!-- Display a li with information about every post (if any)-->
+                {{#each animal}}
+                {{>animal}}
+                {{/each}}
+            </ul>
+            {{else}}
+            <!-- Display an h2 if there are no posts -->
+            <div id="no-post">
+                <h2>There are no results found.</h2>
+            </div>
+
+            {{/if}}
+        </div>
+    </section>
+</main>
